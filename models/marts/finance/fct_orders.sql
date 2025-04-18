@@ -1,10 +1,10 @@
 
---with orders as  (
---    select * from {{ ref ('stg_jaffle_shop__orders' )}}
---),
-with orders as (
-    select * from raw.jaffle_shop.orders
+with orders as  (
+    select * from {{ ref ('stg_jaffle_shop__orders' )}}
 ),
+--with orders as (
+--    select * from raw.jaffle_shop.orders
+--),
 
 payments as (
     select * from {{ ref ('stg_stripe__payments') }}
